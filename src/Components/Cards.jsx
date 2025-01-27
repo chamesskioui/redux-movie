@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { deletefilm } from '../Redux/action'
+import { deletefilm, getfilms } from '../Redux/action'
 import Editfilm from './Editfilm'
 
 function Cards() {
   const movies=useSelector(state=>state.movies)
   const dispatch=useDispatch()
+  useEffect(()=>{dispatch(getfilms())},[])
   return (
 
 
